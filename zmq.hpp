@@ -88,7 +88,7 @@ typedef struct {
 
 // Avoid using deprecated message receive function when possible
 #if ZMQ_VERSION < ZMQ_MAKE_VERSION(3, 2, 0)
-#  define zmq_msg_recv zmq_recvmsg
+#  define zmq_msg_recv(msg, socket, flags) zmq_recvmsg(socket, msg, flags)
 #endif
 
 
